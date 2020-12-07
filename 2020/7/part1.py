@@ -1,6 +1,6 @@
 import re
 
-f = open("input.txt", "r")
+f = open("test_input.txt", "r")
 input = f.readlines()
 f.close()
 
@@ -13,14 +13,13 @@ for line in input:
 
 
 def can_hold(target_colour, parent_bag):
-    result = False
     for rule in rules[parent_bag]:
         if rule[1] == target_colour:
-            result = True
+            return True
         else:
-            result = result or can_hold(target_colour, rule[1])
+            return can_hold(target_colour, rule[1])
     
-    return result
+    return False
 
 total = 0
 for bag in rules:
