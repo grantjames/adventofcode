@@ -11,11 +11,11 @@ for line in input:
     value = re.findall(r"(\d) (\w+ \w+)", line)
     rules[key] = value
 
-def bag_count(colour, depth):
+def bag_count(colour):
     total = 0
     for rule in rules[colour]:
-        total += int(rule[0]) + (int(rule[0]) * bag_count(rule[1], depth+1))
+        total += int(rule[0]) + (int(rule[0]) * bag_count(rule[1]))
     
     return total
 
-print(bag_count("shiny gold", 1))
+print(bag_count("shiny gold"))
