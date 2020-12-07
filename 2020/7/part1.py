@@ -28,14 +28,3 @@ for bag in rules:
         total += 1
     
 print(total)
-
-
-# def can_hold(target_colour, parent_bag):
-#     result = False
-#     for rule in rules[parent_bag]:
-#         if rule[1] == target_colour:
-#             return True
-#         else:
-#             result = result or can_hold(target_colour, rule[1])
-    
-#     return result
