@@ -1,7 +1,3 @@
-# Get maximum of each colour for each game, find product, sum products
-
-# Test input answer = 2286
-
 import re
 import math
 
@@ -25,7 +21,6 @@ for line in input:
             if int(result[0]) > max_counts[result[1]]:
                 max_counts[result[1]] = int(result[0])
     result = math.prod([v for _, v in max_counts.items()])
-    print(result)
     totals.append(result)
 
 print(sum(totals))

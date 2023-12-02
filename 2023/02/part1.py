@@ -1,10 +1,3 @@
-# Determine which games would have been possible if the 
-# bag had been loaded with only
-# 12 red cubes, 13 green cubes, and 14 blue cubes.
-# What is the sum of the IDs of those games?
-
-# Test input answer = 8
-
 import re
 
 f = open("input.txt", "r")
@@ -28,9 +21,7 @@ for line in input:
     for round in rounds:
         results = re.findall(round_pattern, round)
         for result in results:
-            # print(f"Is {result[0]} > {cubes[result[1]]}?")
             if int(result[0]) > cubes[result[1]]:
-                # print("Yes")
                 valid_game = False
                 break
         if not valid_game:
