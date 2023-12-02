@@ -1,0 +1,34 @@
+f = open("sinput.txt", "r")
+input = f.readlines()
+f.close()
+
+file_system = {}
+pwd = []
+
+for line in input:
+    if line.startswith("$ cd .."):
+        pwd.pop()
+
+    elif line.startswith("$ cd "):
+        # Get the name of the directory we're changing to
+        directory = line[5:-1]
+        pwd.append(directory)
+
+        # Add this directory key to the current dict
+        file_system["/".join(pwd)] = []
+    
+    # Do this for files
+    elif not line.startswith("dir ") and not line.startswith("$"):
+        size, name = line.split()
+        file_system["/".join(pwd)].append((int(size), name))
+
+# total = 0
+# for dir, files in file_system.items():
+#     current_dir_size = 0
+#     for file in files:
+#         current_dir_size += file[0]
+#     if current_dir_size <= 100000:
+#         total += current_dir_size
+#     print(dir, current_dir_size)
+
+# print(total)
