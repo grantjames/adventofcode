@@ -1,11 +1,3 @@
-# That means card 1 is worth 8 points (1 for the first match, then doubled three times for each of the three matches after the first).
-
-# Card 2 has two winning numbers (32 and 61), so it is worth 2 points.
-# Card 3 has two winning numbers (1 and 21), so it is worth 2 points.
-# Card 4 has one winning number (84), so it is worth 1 point.
-# Card 5 has no winning numbers, so it is worth no points.
-# Card 6 has no winning numbers, so it is worth no points.
-# So, in this example, the Elf's pile of scratchcards is worth 13 points.
 import time
 
 start_time = time.time()
